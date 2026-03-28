@@ -5,12 +5,12 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./styles/global"
 import theme from "./styles/theme"
 
-import { SignIn } from "./pages/SignIn"
+import { Router } from "./router"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <SignIn />
+      <Router />
       <GlobalStyle />
     </ThemeProvider>
   </StrictMode>,

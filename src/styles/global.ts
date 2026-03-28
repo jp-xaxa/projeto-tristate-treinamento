@@ -8,7 +8,7 @@ export default createGlobalStyle`
   }
 
   :root {
-    font-size: 16px;
+    font-size: 16px; // -> 16 px = 1 rem
   }
 
   body {
