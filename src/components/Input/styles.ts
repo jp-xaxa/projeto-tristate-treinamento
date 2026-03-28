@@ -8,12 +8,14 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-  padding: 1rem;
+  padding: 1rem 0;
   margin-bottom: 0.5rem;
   border-radius: 0.625rem;
 
   > input {
     width: 100%;
+
+    margin-left: 1rem;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
     background-color: transparent;
@@ -21,7 +23,13 @@ export const Container = styled.div`
   }
 
   > svg {
-    margin-right: 1rem;
+    margin-left: 1rem;
     font-size: 1.25rem;
+
+    cursor: pointer;
+
+    &.controlPassword {
+      margin-right: 1rem;
+    }
   }
 `

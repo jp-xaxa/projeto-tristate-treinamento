@@ -13,31 +13,33 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ icon: Icon, ...rest }: InputProps) {
   const [controlViewPassword, setControlViewPassword] = useState<boolean>(false)
-  const [controlTypeInput, setControlTypeInput] = useState<string>("")
+  const [controlTypeInput, setControlTypeInput] = useState(rest.type)
 
   function handleControlPassword() {
     setControlViewPassword(!controlViewPassword)
   }
-  
+
   useEffect(() => {
     if (controlViewPassword && rest.type === "password") {
       setControlTypeInput("text")
     } else {
-      setControlTypeInput(rest.type ?? "text")
+      setControlTypeInput(rest.type)
     }
-  }, [controlTypeInput, rest.type])
+  }, [controlViewPassword, rest.type])
 
   return (
     <Container>
-      {Icon && <Icon />}
-
-      <input type={controlTypeInput} {...rest} />
+      {Icon && <Icon size={20} />}
+      <input {...rest} type={controlTypeInput} />
 
       {rest.type === "password" &&
         (controlViewPassword ? (
-          <TbEyeClosed onClick={handleControlPassword} />
+          <TbEyeClosed
+            className="controlPassword"
+            onClick={handleControlPassword}
+          />
         ) : (
-          <TbEye onClick={handleControlPassword} />
+          <TbEye className="controlPassword" onClick={handleControlPassword} />
         ))}
     </Container>
   )
