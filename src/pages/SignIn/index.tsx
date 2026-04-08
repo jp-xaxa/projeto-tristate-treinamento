@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { FiMail, FiLock } from "react-icons/fi"
 
@@ -13,9 +13,12 @@ export function SignIn() {
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
+  const navigate = useNavigate()
+
   function handleSignIn() {
     console.log("E-mail: ", email)
     console.log("Senha: ", password)
+    navigate("/home")
   }
 
   return (

@@ -5,7 +5,7 @@ export const Container = styled.button`
   height: 3.5rem;
 
   background-color: ${({ theme }) => theme.COLORS.PINK};
-  color: ${({ theme }) => theme.COLORS.WHITE};
+  color: ${({ theme }) => theme.COLORS.BLACK};
 
   border: none;
   border-radius: 0.625rem;
@@ -20,5 +20,10 @@ export const Container = styled.button`
 
   &:disabled {
     opacity: 0.5;
+  }
+
+  &.add-movie {
+    width: fit-content;
+    padding: 0 2rem;
   }
 `

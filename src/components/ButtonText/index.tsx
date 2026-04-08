@@ -3,14 +3,14 @@ import type { IconType } from "react-icons"
 
 import { Container } from "./styles"
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonTextProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string
   icon?: IconType
 }
 
-export function Button({ title, icon: Icon, ...rest }: ButtonProps) {
+export function ButtonText({ title, icon: Icon, ...rest }: ButtonTextProps) {
   return (
-    <Container type="button" {...rest}>
+    <Container {...rest}>
       {Icon && <Icon />}
       {title}
     </Container>
